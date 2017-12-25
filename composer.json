@@ -1,0 +1,22 @@
+{
+    "name": "shopify/publicApp",
+    "authors": [
+        {
+            "name": "Nate Davis",
+            "email": "n8davis@me.com"
+        }
+    ],
+    "require": {
+        "slim/slim": "^3.7",
+        "illuminate/database": "~5.1",
+        "phpclassic/php-shopify": "^1.0",
+        "slim/twig-view": "^2.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "models",
+            "App\\Model\\": "models",
+            "App\\Controller\\": "controllers"
+        }
+    }
+}
