@@ -36,7 +36,7 @@ class App
      */
     public function webhookTopics()
     {
-        // CAN BE EDITED DEPENDING ON STORE CONFIGURATION
+        // EDIT DEPENDING ON STORE CONFIGURATION
         return [
             'app/uninstalled',"carts/create", "carts/update",'checkouts/create',
             'checkouts/delete', 'checkouts/update','collections/create',

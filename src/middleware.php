@@ -9,9 +9,6 @@ $checkHmac = function ($request, $response, $next) {
 };
 
 $shopExists = function ($request, $response, $next) {
-    // BEFORE
-//    $response->getBody()->write('AFTER');
-
     $shop = App\Model\Shop::where( 'shop', \App\Helper::getParam('shop'))->first();
     if( is_null( $shop->shop ) ){
         $currentShop = App\Helper::getParam( 'shop' );
@@ -25,9 +22,6 @@ $shopExists = function ($request, $response, $next) {
         die;
     }
     $response = $next($request, $response);
-    // AFTER
-//    $response->getBody()->write('AFTER');
-
     return $response;
 
 };
