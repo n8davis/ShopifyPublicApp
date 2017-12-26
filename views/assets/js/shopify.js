@@ -1,6 +1,6 @@
 ShopifyApp.init({
     apiKey: "", // add your own app api key
-    shopOrigin: "", // add the client shop here
+    shopOrigin: "", // add the client shop here 
     debug: false,
     forceRedirect: true
 });
