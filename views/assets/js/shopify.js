@@ -1,6 +1,6 @@
 ShopifyApp.init({
-    apiKey: "5c8fb31ceae01652a51a97fa357653ce",
-    shopOrigin: "https://n8davis.myshopify.com",
+    apiKey: "", // add your own app api key
+    shopOrigin: "", // add the client shop here
     debug: false,
     forceRedirect: true
 });
