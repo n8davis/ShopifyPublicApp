@@ -32,6 +32,12 @@ return [
 ];
 ```
 
+## Add Shopify Scopes
+### From /src/middleware.php
+```
+$scopes      = 'read_products,write_products,read_script_tags,write_script_tags';
+```
+
 * [SlimPHP](https://www.slimframework.com/) - The base framework
 * [Eloquent](https://laravel.com/docs/5.5/eloquent) - Database Management
 * [Twig](https://twig.symfony.com/doc/2.x/) - View Templating
