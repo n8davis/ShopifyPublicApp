@@ -34,8 +34,9 @@ return [
 
 ## Add Shopify Scopes
 ### From /src/middleware.php
+#### Add the scopes that your app will use to connect to shop
 ```
-$scopes      = 'read_products,write_products,read_script_tags,write_script_tags';
+$scopes = 'read_products,write_products,read_script_tags,write_script_tags';
 ```
 
 * [SlimPHP](https://www.slimframework.com/) - The base framework
