@@ -1,6 +1,6 @@
 # Shopify Public App Framework
 
-Use this framework to easily create a public app for the Shopify platform, which utlizes SlimPHP, Eloquent, Twig Templating, and Shopify PHP API Library.
+Use this framework to easily create a public app for the Shopify platform. This framework utlizes SlimPHP, Eloquent, Twig Templating, and Shopify PHP API Library.
 
 ## Getting Started
 
