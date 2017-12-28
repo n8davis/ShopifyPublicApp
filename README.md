@@ -72,6 +72,7 @@ public function webhookTopics()
 * [SlimPHP](https://www.slimframework.com/) - The base framework
 * [Eloquent](https://laravel.com/docs/5.5/eloquent) - Database Management
 * [Twig](https://twig.symfony.com/doc/2.x/) - View Templating
+* [Shopify PHP Library](https://github.com/phpclassic/php-shopify) - Shopify API
 
 ## Acknowledgments
 
