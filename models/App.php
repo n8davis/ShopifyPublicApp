@@ -5,8 +5,8 @@ namespace App;
 use PHPShopify;
 class App
 {
-    CONST NAME     = 'slimTest';
-    CONST BASE_URL = 'https://natedavis.me/apps/slimTest/';
+    CONST NAME     = 'shopifyPublicApp';
+    CONST BASE_URL = 'https://yourUrl.com/apps/';
 
 
     protected $shop;
