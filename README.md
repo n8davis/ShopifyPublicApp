@@ -10,6 +10,13 @@ Use this framework to easily create a public app for the Shopify platform. This 
 composer update
 ```
 
+## Enter Name and URL path for App
+### From /models/App.php
+```
+CONST NAME     = 'shopifyPublicApp';
+CONST BASE_URL = 'https://yourUrl.com/apps/';
+```
+
 ## Add database connection
 ### From /src/config.php
 
@@ -50,23 +57,75 @@ public function webhookTopics()
 {
     // EDIT DEPENDING ON STORE CONFIGURATION
     return [
-        'app/uninstalled',"carts/create", "carts/update",'checkouts/create',
-        'checkouts/delete', 'checkouts/update','collections/create',
-        'collections/delete', 'collections/update','collection_listings/add',
-        'collection_listings/remove', 'collection_listings/update',
-        'customers/create', 'customers/delete', 'customers/disable', 'customers/enable',
-        'customers/update','customer_groups/create','customer_groups/delete',
-        'customer_groups/update', 'draft_orders/create', 'draft_orders/delete',
+        'app/uninstalled','draft_orders/create', 'draft_orders/delete',
         'draft_orders/update', 'fulfillments/create', 'fulfillments/update',
         'fulfillment_events/create', 'fulfillment_events/delete',
         'orders/cancelled', 'orders/create', 'orders/delete',
         'orders/fulfilled', 'orders/paid', 'orders/partially_fulfilled', 'orders/updated',
         'order_transactions/create', 'products/create', 'products/delete', 'products/update',
         'product_listings/add', 'product_listings/remove', 'product_listings/update',
-        'refunds/create','shop/update','themes/create', 'themes/delete', 'themes/publish',
-        'themes/update'
+        'refunds/create'
     ];
 }
+```
+
+## Register Your Controllers
+### From /src/dependencies.php
+#### The namespace for this controller is App\Controller\YourController
+```
+$container['App\Controller\YourController'] = function($c) {
+    $view = $c->get("view"); // retrieve the 'view' from the container
+    return new App\Controller\YourController($view);
+};
+
+```
+
+## Display view
+### From /src/dependencies.php
+#### Configure the location of your view directory. The example is in /views
+```
+$container['view'] = function ($c) {
+    $basePath = App\App::BASE_URL . DIRECTORY_SEPARATOR . 'views/';
+    $view = new \Slim\Views\Twig(dirname(__DIR__). DIRECTORY_SEPARATOR . 'views/');
+
+    // Instantiate and add Slim specific extension
+     $view->addExtension(new \Slim\Views\TwigExtension($c['router'], $basePath));
+
+    return $view;
+};
+```
+### From /controllers/HomeController.php 
+#### Your view will have {{ users }} as a variable 
+```
+public function emptyView($request, $response, $args) {
+    return $this->view->render($response, 'empty.php', [
+        'users' => ['Nate', 'Lee', 'Davey']
+    ]);
+}
+```
+
+## Namespaces
+### From /composer.json
+#### Add your namespaces however you like
+```
+"autoload": {
+    "psr-4": {
+        "App\\": "models",
+        "App\\Model\\": "models",
+        "App\\Controller\\": "controllers"
+    }
+}
+```
+
+## Setup Shopify
+### From /views/assets/js/shopify.js
+```
+ShopifyApp.init({
+    apiKey: "", // add your own app api key
+    shopOrigin: "", // add the client shop here 
+    debug: false,
+    forceRedirect: true
+});
 ```
 
 * [SlimPHP](https://www.slimframework.com/) - The base framework

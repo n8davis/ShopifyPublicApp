@@ -38,7 +38,8 @@ class App
     {
         // EDIT DEPENDING ON STORE CONFIGURATION
         return [
-            'app/uninstalled',"carts/create", "carts/update",'checkouts/create',
+            'app/uninstalled',
+            "carts/create", "carts/update",'checkouts/create',
             'checkouts/delete', 'checkouts/update','collections/create',
             'collections/delete', 'collections/update','collection_listings/add',
             'collection_listings/remove', 'collection_listings/update',
