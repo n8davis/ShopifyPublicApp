@@ -127,12 +127,10 @@ ShopifyApp.init({
     forceRedirect: true
 });
 ```
+## Acknowledgments
+* Hat tip to SlimPHP, Eloquent, Twig, Shopify PHP Library
 
 * [SlimPHP](https://www.slimframework.com/) - The base framework
 * [Eloquent](https://laravel.com/docs/5.5/eloquent) - Database Management
 * [Twig](https://twig.symfony.com/doc/2.x/) - View Templating
 * [Shopify PHP Library](https://github.com/phpclassic/php-shopify) - Shopify API
-
-## Acknowledgments
-
-* Hat tip to SlimPHP, Eloquent, Twig, Shopify PHP Library
