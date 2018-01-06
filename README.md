@@ -39,6 +39,18 @@ return [
 ];
 ```
 
+## Extend Eloquent Class
+### From /models/Shop.php
+```
+<?php
+namespace App\Model;
+class Shop extends \Illuminate\Database\Eloquent\Model {
+    protected $table    = 'shops';
+    protected $fillable = ['shop','timezone','whatever'];
+}
+```
+#### Now you can use Eloquent!
+
 ## Add Shopify Scopes
 ### From /src/middleware.php
 #### Add the scopes that your app will use to connect to shop
