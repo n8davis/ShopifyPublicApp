@@ -14,9 +14,9 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "models",
-            "App\\Model\\": "models",
-            "App\\Controller\\": "controllers"
+            "App\\": "models", // "NAMESPACE":"FOLDER PATH "
+            "App\\Model\\": "models", // "NAMESPACE":"FOLDER PATH "
+            "App\\Controller\\": "controllers" // "NAMESPACE":"FOLDER PATH "
         }
     }
 }

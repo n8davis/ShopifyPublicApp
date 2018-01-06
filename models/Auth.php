@@ -13,6 +13,7 @@ class Auth
 {
     protected $scopes;
 
+    
     public static function verify()
     {
         if (  is_null( \PHPShopify\ShopifySDK::$config['SharedSecret'] ) && is_null( \PHPShopify\ShopifySDK::$config['AccessToken']) ){

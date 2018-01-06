@@ -5,7 +5,7 @@ require 'handlers/exceptions.php';
 $config     = include('src/config.php');
 
 $app        = new \Slim\App(['settings'=> $config]);
-
+	
 // Set up dependencies
 require __DIR__ . '/src/dependencies.php';
 
@@ -19,6 +19,6 @@ require __DIR__ . '/src/capsule.php';
 require __DIR__ . '/src/routes.php';
 
 // Register Shopify Credentials
-$shopifyApp = new App\App( App\Helper::getParam( 'shop') );
+$shopifyApp = new App\App( App\Helper::getParam( 'shop' ) );
 
 $app->run();
