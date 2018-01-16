@@ -1,22 +1,23 @@
 <?php
-require 'vendor/autoload.php';
-require 'handlers/exceptions.php';
 
-$config     = include('src/config.php');
+require dirname( __DIR__ ) . DIRECTORY_SEPARATOR . 'vendor/autoload.php';
+require dirname( __DIR__ ) . DIRECTORY_SEPARATOR . 'handlers/exceptions.php';
+
+$config     = include( dirname( __DIR__ ) . DIRECTORY_SEPARATOR . 'src/config.php' );
 
 $app        = new \Slim\App(['settings'=> $config]);
 	
 // Set up dependencies
-require __DIR__ . '/src/dependencies.php';
+require dirname( __DIR__ ) . DIRECTORY_SEPARATOR . '/src/dependencies.php';
 
 // Register middleware
-require __DIR__ . '/src/middleware.php';
+require dirname( __DIR__ ) . DIRECTORY_SEPARATOR . '/src/middleware.php';
 
 // Register capsule
-require __DIR__ . '/src/capsule.php';
+require dirname( __DIR__ ) . DIRECTORY_SEPARATOR . '/src/capsule.php';
 
 // Register routes
-require __DIR__ . '/src/routes.php';
+require dirname( __DIR__ ) . DIRECTORY_SEPARATOR . '/src/routes.php';
 
 // Register Shopify Credentials
 $shopifyApp = new App\App( App\Helper::getParam( 'shop' ) );
