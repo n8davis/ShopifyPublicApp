@@ -41,7 +41,7 @@ return [
 ];
 ```
 
-#### You'll want to go to the .env file ( /.env ) and add relevant data there.
+#### You'll want to go to the .env file and add relevant data there.
 
 ## Extend Eloquent Class
 ### From /models/Shop.php
