@@ -22,22 +22,26 @@ CONST BASE_URL = 'https://yourUrl.com/apps/';
 
 ```
 <?php
+$dotenv = new \Dotenv\Dotenv( dirname( __DIR__ ) );
+$dotenv->load();
 return [
     'determineRouteBeforeAppMiddleware' => false,
-    'outputBuffering' => false,
-    'displayErrorDetails' => true,
-    'db' => [
-        'driver' => 'mysql',
-        'host' => 'localhost',
-        'port' => '22',
-        'database' => 'database',
-        'username' => 'root',
-        'password' => 'root',
-        'charset' => 'utf8',
+    'outputBuffering'                   => false,
+    'displayErrorDetails'               => true,
+    'db'                                => [  
+        'driver'    => 'mysql',
+        'host'      => env( 'DB_HOST'),
+        'port'      => '22',
+        'database'  => env( 'DATABASE' ),
+        'username'  => env( 'DB_USER' ),
+        'password'  => env( 'DB_PASS' ),
+        'charset'   => 'utf8',
         'collation' => 'utf8_unicode_ci',
     ]
 ];
 ```
+
+#### You'll want to go to the .env file ( /.env ) and add relevant data there.
 
 ## Extend Eloquent Class
 ### From /models/Shop.php
