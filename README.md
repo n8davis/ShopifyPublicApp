@@ -18,30 +18,15 @@ CONST BASE_URL = 'https://yourUrl.com/apps/';
 ```
 
 ## Add database connection
-### From /src/config.php
+### From /.env
 
 ```
-<?php
-$dotenv = new \Dotenv\Dotenv( dirname( __DIR__ ) );
-$dotenv->load();
-return [
-    'determineRouteBeforeAppMiddleware' => false,
-    'outputBuffering'                   => false,
-    'displayErrorDetails'               => true,
-    'db'                                => [  
-        'driver'    => 'mysql',
-        'host'      => env( 'DB_HOST'),
-        'port'      => '22',
-        'database'  => env( 'DATABASE' ),
-        'username'  => env( 'DB_USER' ),
-        'password'  => env( 'DB_PASS' ),
-        'charset'   => 'utf8',
-        'collation' => 'utf8_unicode_ci',
-    ]
-];
+DATABASE="mydb"
+DB_PASS="root"
+DB_HOST="localhost"
+DB_USER='root'
 ```
 
-#### You'll want to go to the .env file and add relevant data there.
 
 ## Extend Eloquent Class
 ### From /models/Shop.php
